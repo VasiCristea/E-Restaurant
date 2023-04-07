@@ -1,0 +1,317 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 6,
+    "backwardDepth": 6,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "Main",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1555986994 { 
+   	label=DataAccess
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   EmployeesDAO1555986994[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)EmployeesDAO</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   _employees: ArrayList&lt;Employee&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   employeeFilePath: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ DeleteEmployee(employee: Employee)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ GetEmployeeById(employeeId: UUID): Optional&lt;Employee&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ ReadFromFile(): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ SaveEmployee(employee: Employee): UUID</TD></TR>
+<TR><TD ALIGN="LEFT" >+ SaveToFile(): boolean</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+LocalDAO1555986994[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)LocalDAO</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   _locals: ArrayList&lt;Local&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   localFilePath: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ DeleteLocal(local: Local)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ GetLocalById(localId: UUID): Optional&lt;Local&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ ReadFromFile(): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ SaveLocal(local: Local): UUID</TD></TR>
+<TR><TD ALIGN="LEFT" >+ SaveToFile(): boolean</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+OrdersDAO1555986994[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)OrdersDAO</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   _orders: ArrayList&lt;Order&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   ordersFilePath: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ DeleteOrder(order: Order)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ GetOrderById(orderId: UUID): Optional&lt;Order&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ ReadFromFile(): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ SaveOrder(order: Order): UUID</TD></TR>
+<TR><TD ALIGN="LEFT" >+ SaveToFile(): boolean</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+PaymentsDAO1555986994[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)PaymentsDAO</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   _payments: ArrayList&lt;Payment&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   paymentFilePath: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ DeletePayment(payment: Payment)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ GetPaymentById(paymentId: UUID): Optional&lt;Payment&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ ReadFromFile(): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ SavePayment(payment: Payment): UUID</TD></TR>
+<TR><TD ALIGN="LEFT" >+ SaveToFile(): boolean</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+ProductDAO1555986994[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ProductDAO</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   _products: ArrayList&lt;Product&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   productFilePath: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ DeleteProduct(product: Product)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ GetProductById(productId: UUID): Optional&lt;Product&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ ReadFromFile(): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ SaveProduct(product: Product): UUID</TD></TR>
+<TR><TD ALIGN="LEFT" >+ SaveToFile(): boolean</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_1984932214 { 
+   	label=Models
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Employee1984932214[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Employee</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   Firstname: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   Id: UUID [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   Lastname: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   Role: EmployeeRole [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ updateBy(employee: Employee): Employee</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Local1984932214[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Local</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   Address: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   Company: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   Id: UUID [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   Name: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   Type: LocalTypes [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ updateBy(local: Local): Local</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Order1984932214[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Order</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+   Id: UUID [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   Status: OrderStatus [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ updateBy(order: Order): Order</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Payment1984932214[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Payment</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   Id: UUID [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   Total: double [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   Type: PaymentTypes [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ updateBy(payment: Payment): Payment</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Product1984932214[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Product</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   Category: ProductCategory [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   Id: UUID [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   Name: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   Price: double [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   Quantity: double [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   UOM: UnitOfMeasurment [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ updateBy(product: Product): Product</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_2390489 { 
+   	label=Main
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Main2390489[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Main</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ main(args: String[])</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+'edges    
+EmployeesDAO1555986994 -> Employee1984932214[label="_employees
+[0..*]"];
+LocalDAO1555986994 -> Local1984932214[label="_locals
+[0..*]"];
+Main2390489 -> EmployeesDAO1555986994[label="main() -> SaveEmployee()"];
+Main2390489 -> LocalDAO1555986994[label="main() -> SaveLocal()"];
+Main2390489 -> OrdersDAO1555986994[label="main() -> SaveOrder()"];
+Main2390489 -> PaymentsDAO1555986994[label="main() -> SavePayment()"];
+Main2390489 -> ProductDAO1555986994[label="main() -> SaveProduct()"];
+OrdersDAO1555986994 -> Order1984932214[label="_orders
+[0..*]"];
+PaymentsDAO1555986994 -> Payment1984932214[label="_payments
+[0..*]"];
+ProductDAO1555986994 -> Product1984932214[label="_products
+[0..*]"];
+    
+}
+@enduml
