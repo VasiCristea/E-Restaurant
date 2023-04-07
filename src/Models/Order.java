@@ -15,6 +15,14 @@ public class Order {
     private Table Table;
     private List<Product> ProductsList = new ArrayList<>();
 
+    public Order(OrderStatus status, Employee employee, Table table) {
+        Status = status;
+        Employee = employee;
+        EmployeeId = employee.getId();
+        Table = table;
+        TableId = table.getId();
+    }
+
     public UUID getId() {
         return Id;
     }
@@ -67,6 +75,11 @@ public class Order {
     public Order updateBy(Order order) {
         this.Id = order.Id;
         return this;
+    }
+
+    public void prepareForSaving() {
+        this.Employee = null;
+        this.Table = null;
     }
 
 }

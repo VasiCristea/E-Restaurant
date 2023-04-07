@@ -1,1 +1,7 @@
-[{"id":"2f84b568-7531-4879-b6d1-a6481c8c4c0a","number":1,"status":"Free"},{"id":"ee209b9c-ff7e-4047-8a09-4823bcdec41d","number":1,"status":"Free"},{"id":"8e1bb1d9-1f3f-4e72-aa96-6e2361f6f1df","number":1,"status":"Free"},{"id":"e87feacc-1bf2-4cd0-bdd8-8497f99b42b6","number":1,"status":"Free"},{"id":"b7f89caa-c7f2-49a5-8061-05343c7ffd15","number":1,"status":"Free"},{"id":"3c820875-4b06-483f-931e-90ac283e0c86","number":1,"status":"Free"},{"id":"14cec9ac-0f64-437d-88b9-3a89a32b7b43","number":1,"status":"Free"}]
+[
+  {
+    "id": "3672fcc6-6ac0-40ee-8327-574c976fd9de",
+    "number": 1,
+    "status": "Free"
+  }
+]

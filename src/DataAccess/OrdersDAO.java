@@ -28,6 +28,7 @@ public class OrdersDAO implements IOrdersDAO {
 
     @Override
     public UUID SaveOrder(Order order) {
+        order.prepareForSaving();
       if(null == order.getId()) {
         order.setId(UUID.randomUUID());
         this._orders.add(order);

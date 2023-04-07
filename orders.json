@@ -1,1 +1,10 @@
-[{"Id":"ae9b2bee-6251-4616-a292-3bb59937013c","receiptOrderId":null,"receiptLocalId":null,"receiptPaymentId":null,"id":"ae9b2bee-6251-4616-a292-3bb59937013c","status":null},{"Id":"4c0efb9b-0b52-4594-a0f4-a1aa81d0eaf6","id":"4c0efb9b-0b52-4594-a0f4-a1aa81d0eaf6","status":null},{"Id":"76ae47da-da7b-486c-acc9-529cdcb5fd54","id":"76ae47da-da7b-486c-acc9-529cdcb5fd54","status":null},{"id":"42addd4a-a74a-4df8-b06c-f80523cb58f8","status":null},{"id":"bf6e1605-9be1-468e-b811-ae944f04554e","status":null},{"id":"cf47585c-6ffd-4085-aaa7-17dfbbe1a62c","status":null},{"id":"e3075085-f37e-4a21-98e0-bdf2932785a0","table":null,"employee":null,"status":null,"employeeId":null,"tableId":null}]
+[
+  {
+    "id": "89a3d954-28bf-4bd7-9d72-0f45097f011d",
+    "table": null,
+    "status": "Closed",
+    "employee": null,
+    "tableId": "3672fcc6-6ac0-40ee-8327-574c976fd9de",
+    "employeeId": "747f24aa-3228-44ac-99d4-7c791b3a9981"
+  }
+]

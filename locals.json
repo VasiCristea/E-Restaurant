@@ -1,1 +1,9 @@
-[{"name":"Vasi's","id":"c1e972f0-a990-4ac4-9060-b1ba072813c8","type":"Bar","address":"Micsunelelor 8","company":"Giani Orlando SRL"},{"name":"Vasi's","id":"fccee46a-2ec1-4501-abfc-3b1cf8554abf","type":"Bar","address":"Micsunelelor 8","company":"Giani Orlando SRL"},{"name":"Vasi's","id":"5ec101b7-abde-47a0-9bc9-9708d297db75","type":"Bar","address":"Micsunelelor 8","company":"Giani Orlando SRL"},{"name":"Vasi's","id":"0292be00-7a90-43ae-8626-4157e64056de","type":"Bar","address":"Micsunelelor 8","company":"Giani Orlando SRL"},{"name":"Vasi's","id":"2b598c1a-8923-4d98-bb27-03c44c756150","type":"Bar","address":"Micsunelelor 8","company":"Giani Orlando SRL"},{"name":"Vasi's","id":"28db1b92-cdd5-4748-bed7-22d8b7558dc2","type":"Bar","address":"Micsunelelor 8","company":"Giani Orlando SRL"},{"name":"Vasi's","id":"f1923251-9735-4088-81b3-b81ec0cd9b08","type":"Bar","address":"Micsunelelor 8","company":"Giani Orlando SRL"}]
+[
+  {
+    "name": "Vasi's",
+    "id": "4e279ebd-3f20-4440-a493-5b3063e356b0",
+    "type": "Bar",
+    "address": "Micsunelelor 8",
+    "company": "Giani Orlando SRL"
+  }
+]
