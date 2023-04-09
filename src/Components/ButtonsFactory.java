@@ -4,6 +4,8 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
 
+import static java.awt.Component.CENTER_ALIGNMENT;
+
 public abstract class ButtonsFactory {
     public static JButton CreateButton(String text, ButtonsTypes type){
         JButton button = new JButton(text);
