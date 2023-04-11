@@ -1,34 +1,31 @@
 package Components;
 
+import Enums.Constants;
+
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 
-import static java.awt.Component.CENTER_ALIGNMENT;
-
 public abstract class ButtonsFactory {
-    public static JButton CreateButton(String text, ButtonsTypes type){
+    public static JButton CreateButton(String text, Color color){
         JButton button = new JButton(text);
-        switch (type) {
-            case Primary -> {
-                button.setForeground(new Color(225, 225, 225));
-                button.setBackground(new Color(20, 108, 148));
-            }
-            case Info -> {
-                button.setForeground(new Color(225, 225, 225));
-                button.setBackground(new Color(23, 183, 178));
-            }
-            case Danger -> {
-                button.setForeground(new Color(225, 225, 225));
-                button.setBackground(new Color(126, 30, 10));
-            }
+
+        if (color.equals(Constants.Colors.DarkBlue)) {
+            button.setForeground(Constants.Colors.White);
+            button.setBackground(Constants.Colors.DarkBlue);
+        } else if (color.equals(Constants.Colors.LightBlue)) {
+            button.setForeground(Constants.Colors.White);
+            button.setBackground(Constants.Colors.LightBlue);
+        } else if (color.equals(Constants.Colors.Yellow)) {
+            button.setForeground(Constants.Colors.Black);
+            button.setBackground(Constants.Colors.Yellow);
+        } else if (color.equals(Constants.Colors.White)) {
+            button.setForeground(Constants.Colors.Black);
+            button.setBackground(Constants.Colors.White);
         }
+
+        button.setPreferredSize(new Dimension(200, 37));
 
         return button;
     }
-    public enum ButtonsTypes{
-        Primary,
-        Danger,
-        Info
-    }
+
 }

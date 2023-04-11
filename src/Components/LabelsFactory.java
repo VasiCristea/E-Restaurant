@@ -1,15 +1,18 @@
 package Components;
 
+import Enums.Constants;
+
 import javax.swing.*;
 import java.awt.*;
 
 public abstract class LabelsFactory {
 
-    public static JLabel CreateLabel(String text, Colors color) {
+    public static JLabel CreateLabel(String text, Color color) {
         JLabel label = new JLabel(text);
-        switch (color) {
-            case White -> label.setForeground(new Color(225, 225, 225));
-            case Black -> label.setForeground(new Color(0, 0, 0));
+        if (color.equals(Constants.Colors.White)) {
+            label.setForeground(Constants.Colors.White);
+        } else if (color.equals(Constants.Colors.Black)) {
+            label.setForeground(Constants.Colors.Black);
         }
         return label;
     }
